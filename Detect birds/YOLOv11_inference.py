@@ -7,19 +7,19 @@ import os
 
 # Inputs: root_dir = folder with images;
 #         new_csv = detection csv to output
-#         model_path = path to YOLOv8 weights file
+#         model_path = path to YOLO weights file
 # from torch import init_num_threads
 
-# root_dir = "D:/WHCR_2025/12_WHCR_detection/f_model_results/test_parent_images/"
+# root_dir = "D:/project_2025/12_project_detection/f_model_results/test_parent_images/"
 
-root_dir = "D:/WHCR_2025/share_w_Matt/test/"
+root_dir = "D:/project_2025/test/"
 file_type = "jpg"
 
-new_csv = "D:/WHCR_2025/share_w_Matt/test.csv"
-visual_path = "D:/WHCR_2025/share_w_Matt/test_viz/"
+new_csv = "D:/project_2025/test.csv"
+visual_path = "D:/project_2025/test_viz/"
 
-#new_csv = "D:/WHCR_2025/12_WHCR_detection/8_inference/survey_095400_yolo10x_conf_20.csv"
-model_path= "D:/WHCR_2025/model_weights/whcr_detector_yolo11s_Aug3.pt"
+#new_csv = "D:/project_2025/12_project_detection/8_inference/survey_095400_yolo10x_conf_20.csv"
+model_path= "D:/project_2025/model_weights/project_detector_yolo11s_Aug3.pt"
 
 device = "cuda:2" if torch.cuda.is_available() else "cpu"
 print(f"Using {device} device")
@@ -103,4 +103,5 @@ del csv_data['ymax']
 del csv_data['temp_name']
 
 csv_data.to_csv(new_csv)
+
 
