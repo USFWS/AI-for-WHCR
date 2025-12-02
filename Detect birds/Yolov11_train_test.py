@@ -25,13 +25,14 @@ print(f"Using {device} device")
 model = YOLO("yolo11m.pt")
 model.info()
 
-results = model.train(data="D:/WHCR_2025/12_WHCR_detection/7_opt.yaml",
+results = model.train(data="D:/project_2025/12_project_detection/7_opt.yaml",
                       batch=12, iou = 0.20,
                       task="detect", epochs=70, imgsz=1024, patience=0,
                       device=2, max_det=20, lr0=0.001, conf=0.20,
                       cache="False",
-                      project="D:/WHCR_2025/12_WHCR_detection/f_model_results/",
+                      project="D:/project_2025/12_project_detection/f_model_results/",
                       name="YOLO11m_conf20_Aug3", amp= True, workers=0)
 
 # Load model for inference, then
 # model.export(format = "onnx")
+
